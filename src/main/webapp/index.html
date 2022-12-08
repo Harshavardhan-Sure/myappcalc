@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        * {
+            margin: 0%;
+            background-color: rgb(229, 227, 201);
+            font-family: 'Segoe UI';
+        }
+
+        .heading {
+
+            color: rgb(48, 52, 63);
+            margin-left: 40%;
+            margin-top: 5%;
+            font-size: 60px;
+
+        }
+
+        .values {
+            display: flex;
+            justify-content: space-around;
+            margin: 5% 32% 2% 32%;
+        }
+
+        input {
+            padding: 10px;
+            border-color: rgb(138, 43, 226);
+        }
+
+        .buttons {
+            display: inline;
+            margin-left: 39%;
+        }
+
+        button {
+            padding: 5px;
+        }
+
+        #Result {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+
+            color: #0c7b93;
+        }
+
+        .res {
+            margin-left: 47%;
+            margin-top: 2%;
+            margin-bottom: 1%;
+            color: rgb(48, 52, 63);
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 class="heading">Calculator</h1>
+    <div class="values">
+        <input onkeyup="store()" id="no1" type="text" placeholder="First number">
+        <input onkeyup="store()" id="no2" type="text" placeholder="Second number">
+
+    </div>
+    <div class="buttons">
+        <button onclick="add()">Addition</button>
+        <button onclick="sub()">Subtraction</button>
+        <button onclick="mul()">Multiplication</button>
+        <button onclick="div()">Division</button>
+    </div>
+
+    <h1 class="res">Result</h1>
+    <h2 id="Result" type="text"> </h2>
+
+    <script>
+        var a, b;
+        function store() {
+            a = Number(document.getElementById("no1").value);
+            b = Number(document.getElementById("no2").value);
+            console.log(a, b)
+        }
+        function add() {
+            document.getElementById("Result").innerHTML = a + b;
+
+        }
+        function sub() {
+            document.getElementById("Result").innerHTML = a - b;
+
+        }
+        function mul() {
+            document.getElementById("Result").innerHTML = a * b;
+
+        }
+        function div() {
+            document.getElementById("Result").innerHTML = a / b;
+
+        }
+    </script>
+</body>
+
+</html>
